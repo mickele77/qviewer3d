@@ -9,13 +9,15 @@ HEADERS += \
     modelloader.h
 
 SOURCES += \
+    main.cpp \
     material.cpp \
     light.cpp \
-    main.cpp \
     mainwindow.cpp \
     mesh.cpp \
     node.cpp \
     modelloader.cpp
 
-RESOURCES     = application.qrc \
+RESOURCES = \
     application.qrc
+
+LIBS += -lassimp
