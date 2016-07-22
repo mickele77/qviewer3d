@@ -21,3 +21,8 @@ RESOURCES = \
     application.qrc
 
 LIBS += -lassimp
+
+win32 {
+    INCLUDEPATH += D:/Documenti-Mocciola/tmp/assimp/include
+    LIBPATH     += D:/Documenti-Mocciola/tmp/assimp/bin32
+}

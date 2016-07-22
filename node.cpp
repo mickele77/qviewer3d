@@ -44,4 +44,15 @@ void Node::setTransformation(const QMatrix4x4 &newTransformation) {
 }
 
 void Node::resizeMeshes( int newSize ) {
+    int numToAdd = newSize - m_d->meshes.size();
+    if( numToAdd > 0 ){
+        for( int i=0; i < numToAdd; ++i ){
+            m_d->meshes.append( new Mesh() );
+        }
+    } else if( numToAdd < 0 ){
+        numToAdd *= -1;
+        for( int i=0; i < numToAdd; ++i ){
+            delete m_d->meshes.takeLast();
+        }
+    }
 }

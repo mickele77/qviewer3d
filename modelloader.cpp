@@ -106,7 +106,7 @@ public:
 
         newNode.setTransformation( QMatrix4x4(node->mTransformation[0]) );
 
-        newNode.meshes.resize(node->mNumMeshes);
+        newNode.resizeMeshes(node->mNumMeshes);
         for (uint imesh = 0; imesh < node->mNumMeshes; ++imesh) {
             QSharedPointer<Mesh> mesh = meshes[node->mMeshes[imesh]];
             newNode.meshes[imesh] = mesh;
